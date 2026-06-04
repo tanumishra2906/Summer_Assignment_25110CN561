@@ -6,7 +6,7 @@ int main(){
     if(n<=1){
         flag=0; //cuz 1 is every nos factor
     }
-    for(int i=2;i*i<=n;i++){
+    for(int i=2;i*i<=n;i++){ //faster condition than i<n
         if(n%i==0){
             flag=0;
             break;
@@ -16,7 +16,7 @@ int main(){
     if (flag==1){
         printf("num is prime");
     }
-    
+
     if (flag==0){
         printf("num is not prime");
     }
