@@ -17,14 +17,23 @@ int main(){
     str2[strcspn(str2, "\n")] = '\0'; //this because fgets also stores newline
 
 
-    if(strlen(str1)!=strlen(str2)){
-        printf("strings are not anagram");
-        return 0;
-    }
 
     for(i=0;str1[i]!='\0' ;i++){
-        count[str1[i]]++;  //look there are boxes for each letter..supposse letter s ka count from s1 is +1 then iss letter ka count from s2 is -1 net count 0 for that letter
-        count[str2[i]]--;  //agr letter wont appear then unka count either +ve or -ve reh jayega not 0
+        if(str1[i]!=' '){
+            count[str1[i]]++;
+
+        }
+        //look there are boxes for each letter..supposse letter s ka count from s1 is +1 then iss letter ka count from s2 is -1 net count 0 for that letter
+        //agr letter wont appear then unka count either +ve or -ve reh jayega not 0
+        //spaces milte hi skip count
+
+    }
+    for(i=0;str2[i]!='\0' ;i++){
+        if(str2[i]!=' '){
+            count[str2[i]]--;
+
+        }
+        
 
     }
     
