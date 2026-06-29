@@ -1,6 +1,6 @@
 //Write a program to Create marksheet generation system
 
-// Write a C program to create a Marksheet Generation System using Structures.
+
 
 #include<stdio.h>
 

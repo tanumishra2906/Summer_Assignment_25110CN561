@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 int main(){
-    int i , j ,mat1[3][3],mat2[3][3],mat3[3][3];
+    int i , j ,mat1[3][3],mat2[3][3];
     printf("enter matrix 1 = \n");
     for(i=0;i<3;i++){
         for(j=0;j<3;j++){

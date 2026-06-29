@@ -7,7 +7,7 @@
     printf("enter rows and column of matrix 2 \n");
     scanf("%d %d" ,&r2 ,&c2); 
     if(c1!=r2){
-        printf("Mltiplication not possible");
+        printf("Multiplication not possible");
     }
     else{
     printf("enter elements for matrix 1:\n");
