@@ -3,17 +3,38 @@
 #include <stdio.h>
 
 int main() {
-    int choice,pin;
-    float balance=1000,amount;
+    int choice,pin,attempts;
+    float balance=1000,amount,validinput;
 
     printf("**************************ATM Simulation*******************************\n\n");
 
-    printf("enter Pin\n");
-    scanf("%d" , &pin);
+    //pin validation
+    do{
+        printf("Enter Pin\n");
+        validinput=scanf("%d" , &pin); //returns true only if digit entered
 
+        while(getchar()!='\n'); //invalid char are stored in buffer...this line consumes al invalid char and once \n is reached buffer is cleared and ready to store new input
+
+        if(!validinput){
+            printf("Enter numbers only\n");
+            attempts--;
+            continue;
+
+        }
+
+        if(pin!=1234){
+            attempts --;
+            if(attempts>0){
+                printf("Invalid pin\n Please try again\n");
+            }
+            
+        }
+    }while(pin!=1234 && attempts>0);
+
+
+    
     if(pin!=1234){
-        printf("Invalid Pin Entered \n");
-        return 0;
+        printf("Invalid pin\n too many login attempts \n");
     }
 
     do{
@@ -23,9 +44,15 @@ int main() {
         printf("3. Withdraw Money\n");
         printf("4. Exit\n");
 
-        printf("enter choice \n");
-        scanf("%d" , &choice);
+        printf("Enter choice\n");
+        validinput=scanf("%d" , &choice);
 
+        while(getchar()!='\n');
+        if(!validinput){
+            printf("Enter numbers only\n");
+            continue;
+
+        }
         switch(choice){
             
             
